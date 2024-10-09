@@ -1,0 +1,54 @@
+{
+  "name": {
+    "type": "text",
+    "name": "name",
+    "minLength": 4,
+    "maxLength": 48,
+    "pattern": "^[a-zA-Z0-9\\-_]+$",
+    "required": true,
+    "autoComplete": "name",
+    "aria-label": "Name",
+    "aria-required": "true",
+    "spellCheck": false,
+    "inputMode": "text",
+    "readOnly": false
+  },
+  "email": {
+    "type": "email",
+    "name": "email",
+    "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    "required": true,
+    "autoFocus": true,
+    "autoComplete": "email",
+    "aria-label": "Email address",
+    "aria-required": "true",
+    "spellCheck": false,
+    "inputMode": "email"
+  },
+  "password": {
+    "type": "password",
+    "name": "password",
+    "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$",
+    "required": true,
+    "minLength": 8,
+    "maxLength": 128,
+    "autoComplete": "new-password",
+    "aria-label": "Password",
+    "aria-required": "true",
+    "spellCheck": false,
+    "readOnly": false
+  },
+  "quoteFrom": {
+    "type": "text",
+    "name": "quote-from",
+    "minLength": 1,
+    "maxLength": 48,
+    "required": true,
+    "autoComplete": "quote-from",
+    "aria-label": "QuoteFrom",
+    "aria-required": "true",
+    "spellCheck": false,
+    "inputMode": "text",
+    "readOnly": false
+  }
+}

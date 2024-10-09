@@ -8,8 +8,11 @@ export const env = createEnv({
       .optional()
       .transform((value) => value === "true"),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_MOCK_STREAM_CHUNK_URL: z.string().startsWith("http"),
+  },
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
+    NEXT_PUBLIC_MOCK_STREAM_CHUNK_URL: process.env.NEXT_PUBLIC_MOCK_STREAM_CHUNK_URL,
   },
 })
