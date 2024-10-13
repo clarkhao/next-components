@@ -3,23 +3,28 @@ import { IconState } from "components/state/iconState_v1"
 import { Button, ButtonProps } from "./button"
 
 export interface ButtonWrapperProps extends ButtonProps {
-  state: "prev" | "pending" | "success" | "error"
+  state?: "prev" | "pending" | "success" | "error"
+  animated?: boolean
 }
 
 export const ButtonWrapper = React.forwardRef<HTMLButtonElement, ButtonWrapperProps>(
-  ({ state, children, ...props }, ref) => {
+  ({ state="prev", animated, children=false, ...props }, ref) => {
     return (
       <Button
         ref={ref}
         {...props}
         variant={state === "error" && props.variant === "default" ? "destructive" : props.variant}
       >
-        <IconState
-          width={20}
-          prevState={children}
-          state={state}
-          variant={props.variant === "default" ? "white" : "default"}
-        />
+        {animated ? (
+          <IconState
+            width={20}
+            prevState={children}
+            state={state}
+            variant={props.variant === "default" ? "white" : "default"}
+          />
+        ) : (
+          children
+        )}
       </Button>
     )
   }

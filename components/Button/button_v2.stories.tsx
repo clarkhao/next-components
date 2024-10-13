@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react"
 import { twMerge } from "tailwind-merge"
 import { ButtonWrapper } from "./button_v2"
+import { domAnimation, LazyMotion } from "framer-motion"
 
 const meta: Meta<typeof ButtonWrapper> = {
   title: "UI/Button",
@@ -16,8 +17,9 @@ const meta: Meta<typeof ButtonWrapper> = {
     asChild: false,
     state: "prev",
     disabled: false,
+    animated: true,
     children: "Hello",
-    className: twMerge("flex justify-center items-center gap-4")
+    className: twMerge("flex justify-center items-center gap-4 w-20"),
   },
   argTypes: {
     variant: {
@@ -42,4 +44,14 @@ const meta: Meta<typeof ButtonWrapper> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const ButtonV2: Story = {}
+export const ButtonV2: Story = {
+  decorators: [
+    (Story) => {
+      return (
+        <LazyMotion features={domAnimation}>
+          <Story />
+        </LazyMotion>
+      )
+    },
+  ],
+}

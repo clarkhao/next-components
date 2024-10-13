@@ -100,6 +100,7 @@ export function DropFileZone({ ...props }: TDropFileZone) {
                           setFiles((prev) => prev.filter((_, index) => index !== i))
                         }}
                         state={"prev"}
+                        animated={false}
                       >
                         <CircleX className="rounded-full" />
                       </ButtonWrapper>

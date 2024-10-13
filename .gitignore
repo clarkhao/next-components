@@ -5,6 +5,10 @@ node_modules
 .pnp
 .pnp.js
 
+# project
+**/canvas/
+**/text-animation/
+
 # testing
 coverage
 
@@ -33,3 +37,4 @@ yarn-error.log*
 /playwright/.cache/
 
 /.npm-only-allow
+

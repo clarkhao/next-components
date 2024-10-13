@@ -141,7 +141,17 @@ export function HandWriting({
   // Create a schema that validates all characters are in the printable ASCII range (33 to 126)
   const varaTextSchema = z.object({
     id: z.string(),
-    text: z.string(),
+    text: z.string().refine(
+      (value) => {
+        return [...value].every((char) => {
+          const asciiCode = char.charCodeAt(0)
+          return asciiCode >= 32 && asciiCode <= 126
+        })
+      },
+      {
+        message: "All characters must be in the ASCII printable range (33 to 126).",
+      }
+    ),
     fontSize: z.number(),
     duration: z.number(),
     offset: z.object({

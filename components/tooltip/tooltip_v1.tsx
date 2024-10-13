@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority"
+import { ButtonWrapper } from "components/button/button_v2"
 import { Navigation2 } from "lucide-react"
 import React, { ButtonHTMLAttributes, FC, useState } from "react"
 import { twMerge } from "tailwind-merge"
@@ -142,28 +143,21 @@ type TTooltip = {
 } & VariantProps<typeof tooltip> &
   VariantProps<typeof arrow> &
   ButtonHTMLAttributes<HTMLButtonElement>
-export function Tooltip({
-  pos,
-  bgColor,
-  centered = true,
-  isLeft = true,
-  tips,
-  isAuto = true,
-  ...props
-}: TTooltip) {
+export function Tooltip({ pos, bgColor, centered = true, isLeft = true, tips, isAuto = true, ...props }: TTooltip) {
   const [showTooltip, setShowTooltip] = useState(isAuto)
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   return (
     <>
-      <button
-        {...props}
-        className={twMerge("group relative w-fit")}
-        ref={btnRef}
+      <ButtonWrapper
+        state={"prev"}
+        className={twMerge("group relative w-fit overflow-visible")}
         onClick={() => setShowTooltip(!showTooltip)}
+        variant={"ghost"}
+        size={"default"}
+        animated={false}
       >
         {props.children}
-
         <div
           data-show={showTooltip}
           className={twMerge(
@@ -188,7 +182,7 @@ export function Tooltip({
             !isAuto ? "animate-fadeInOut data-[show=true]:block data-[show=false]:hidden" : ""
           )}
         />
-      </button>
+      </ButtonWrapper>
       {/* 1, use data attribute to conditionally render */}
       {/* 2, use open state of <details> or <dialog> */}
     </>

@@ -7,7 +7,7 @@ type TDraggableItem<T> = {
   data: T
 }
 
-export function DraggableItem<T>({ children, data, ...props }: TDraggableItem<any>) {
+export function DraggableItem<T>({ children, data }: TDraggableItem<any>) {
   const y = useMotionValue(0)
   const boxShadow = useRaisedShadow(y)
   const dragControls = useDragControls()

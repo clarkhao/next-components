@@ -13,7 +13,7 @@ export function Recovery({ error, recoveryHandler, backPath, ...props }: TRecove
     <div {...props} className="flex h-screen min-h-full w-full flex-col items-center justify-center gap-8">
       <span className="text-lg">Oops! Looks like something went wrong!{" "}</span>
       <span className="flex flex-row justify-evenly items-center gap-6">
-        <ButtonWrapper onClick={recoveryHandler} state={"prev"} variant={"destructive"}>
+        <ButtonWrapper onClick={recoveryHandler} state={"prev"} variant={"destructive"} animated={false}>
           Try again
         </ButtonWrapper>
         <span>or</span>

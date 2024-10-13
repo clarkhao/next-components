@@ -9,6 +9,7 @@ const meta: Meta<typeof TextItemAbbr> = {
     layout: "padded",
   },
   args: {
+    isNew: false,
     id: 1
   },
 }
@@ -16,4 +17,4 @@ const meta: Meta<typeof TextItemAbbr> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const TextAreaAbbr: Story = {}
+export const TextItemAbbrDefault: Story = {}

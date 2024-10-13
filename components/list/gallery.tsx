@@ -117,6 +117,7 @@ export function GalleryInfinite<T, U>({
         onClick={() => fetchNextPage()}
         className="w-48 absolute inset-x-0 mx-auto bottom-2"
         disabled={!hasNextPage || isFetchingNextPage}
+        animated={false}
       >
         {isFetchingNextPage ? "Loading more..." : hasNextPage ? "Load More" : "Nothing more to load"}
       </ButtonWrapper>

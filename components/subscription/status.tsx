@@ -25,7 +25,7 @@ export function SubscriptionStatus({ plan, messages, ...props }: TSubscriptionSt
         </CardTitle>
         <CardDescription>free for some period</CardDescription>
         {plan !== "pro" ? (
-          <ButtonWrapper state={"prev"} size="sm" variant={"secondary"}>
+          <ButtonWrapper state={"prev"} size="sm" variant={"secondary"} animated={false}>
             Upgrade Your Plan
           </ButtonWrapper>
         ) : null}

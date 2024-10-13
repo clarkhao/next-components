@@ -13,10 +13,10 @@ const meta: Meta<typeof Tooltip> = {
     isLeft: true,
     bgColor: "dark",
     pos: "top",
+    isAuto: true,
     tips: () => (
         <p
-          className="flex h-6 w-[80px] items-center justify-center text-sm"
-          
+          className="flex h-2 w-[80px] items-center justify-center text-xs"
         >
           Hello World
         </p>

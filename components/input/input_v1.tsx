@@ -226,6 +226,7 @@ export const Input = ({ variant, height, value, disabled, verify, handleset, ...
                 }}
                 className={twMerge("absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2", "cursor-pointer")}
                 state={"prev"}
+                animated={false}
               >
                 {fields["type"] === "password" ? <EyeOff className="h-auto w-4 " /> : <Eye className="h-auto w-4 " />}
               </ButtonWrapper>

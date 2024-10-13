@@ -10,7 +10,7 @@ function ModalDemo() {
   return (
     <div className="relative h-screen w-full">
       {isOpen && <div className="z-10 size-full bg-gray-200/80 dark:bg-gray-700/80"></div>}
-      <ButtonWrapper className="absolute inset-0 m-auto w-32" state={"prev"} onClick={() => setOpen(true)} size={"lg"}>
+      <ButtonWrapper animated={false} className="absolute inset-0 m-auto w-32" state={"prev"} onClick={() => setOpen(true)} size={"lg"}>
         Open
       </ButtonWrapper>
       <AnimatePresence initial={false}>

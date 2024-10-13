@@ -47,6 +47,7 @@ export function Modal({ isOpen, handleSwitch, children, animateEffect, className
         size={"icon"}
         onClick={handleSwitch}
         state={"prev"}
+        animated={false}
       >
         <X size={16} />
         <span className="sr-only">Close modal</span>
